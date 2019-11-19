@@ -29,7 +29,7 @@ class SongsController < ApplicationController
       artist = Artist.create(:name => artist_entry)
     end
     @song.artist = artist
-    binding.pry
+    
     genre_selections = params[:song][:genres]
     if genre_selections != nil
       genre_selections.each do |genre|
