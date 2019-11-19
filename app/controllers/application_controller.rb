@@ -1,4 +1,4 @@
-
+require 'rack-flash'
 require_relative '../models/concerns/slug.rb'
 class ApplicationController < Sinatra::Base
   register Sinatra::ActiveRecordExtension
