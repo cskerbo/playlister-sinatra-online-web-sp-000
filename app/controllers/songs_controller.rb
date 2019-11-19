@@ -13,11 +13,6 @@ class SongsController < ApplicationController
     erb :'songs/new'
   end
 
-  get '/songs/:slug' do
-    slug = params[:slug]
-    @song = Song.find_by_slug(slug)
-    erb :'songs/show'
-  end
 
   post '/songs' do
     @song = Song.create(:name => params[:song][:name])
@@ -43,7 +38,11 @@ class SongsController < ApplicationController
 
   end
 
-
+  get '/songs/:slug' do
+    slug = params[:slug]
+    @song = Song.find_by_slug(slug)
+    erb :'songs/show'
+  end
 
   patch '/songs/:slug' do
      song = Song.find_by_slug(params[:slug])
