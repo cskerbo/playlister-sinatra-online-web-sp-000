@@ -2,7 +2,8 @@ module Slug
   module InstanceMethods
 
     def slug
-      slug = self.name.downcase.gsub(" ", '-')
+      artist_name = self.name
+      slug = artist_name.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')
     end
   end
 
