@@ -25,8 +25,10 @@ class SongsController < ApplicationController
     @song.artist = artist
 
     genre_selections = params[:song][:genres]
-    genre_selections.each do |genre|
+    if genre_selections != nil
+      genre_selections.each do |genre|
       @song.genres << Genre.find(genre)
+      end
     end
 
     @song.save
